@@ -24,7 +24,7 @@ body {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  max-width: 75vw;
+  max-width: 35vw;
   max-height: 500px;
   justify-content: center;
   margin: 0 auto;
@@ -33,6 +33,12 @@ body {
   padding: 2rem;
   transition: max-height 0.15s ease-out;
   position: relative;
+}
+
+@media (max-width: 500px) {
+  .adviceCard {
+    max-width: 75vw;
+  }
 }
 
 #adviceText {
