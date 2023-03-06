@@ -21,6 +21,7 @@ async function fetchAdvice() {
       const advice = '"' + data.slip.advice + '"';
       let curr = 0;
       if (interval) {
+        document.querySelector("#adviceText").textContent = "";
         clearInterval(interval);
         interval = null;
       }
