@@ -3,7 +3,7 @@ const newAdvice = document.querySelector("#newAdvice");
 
 let db = false;
 let interval;
-let adviceNum = 0;
+let adviceNum = localStorage.getItem("adviceNum") || 0;
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(ms, resolve));
@@ -17,6 +17,7 @@ async function fetchAdvice() {
     .then((response) => response.json())
     .then(async (data) => {
       adviceNum++;
+      localStorage.setItem("adviceNum", adviceNum);
       document.querySelector("#adviceId").textContent = `ADVICE #${adviceNum}`;
       const advice = '"' + data.slip.advice + '"';
       let curr = 0;
